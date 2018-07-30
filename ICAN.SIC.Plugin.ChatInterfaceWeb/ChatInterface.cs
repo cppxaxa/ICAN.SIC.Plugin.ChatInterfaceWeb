@@ -10,27 +10,24 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb
 {
     public class ChatInterface : AbstractPlugin, IChatInterface
     {
-        ChatInterfaceHelper helper = new ChatInterfaceHelper();
+        ChatInterfaceHelper helper;
         ChatInterfaceUtility utility = new ChatInterfaceUtility();
-
-        List<IUIMessage> messageList = new List<IUIMessage>();
 
         public ChatInterface()
         {
-            hub.Subscribe<IUserResponse>(this.AddUserResponse);
             hub.Subscribe<IBotResponse>(this.AddBotResponse);
+            hub.Subscribe<IUserResponse>(this.AddUserResponse);
+            helper = new ChatInterfaceHelper(this);
         }
 
         private void AddUserResponse(IUserResponse response)
         {
-            IUIMessage message = new UIMessage(Color.User, response.Text);
-            messageList.Add(message);
+            helper.AddUserMessage(response.Text);
         }
 
         private void AddBotResponse(IBotResponse response)
         {
-            IUIMessage message = new UIMessage(Color.Bot, response.Text);
-            messageList.Add(message);
+            helper.AddBotMessage(response.Text);
         }
 
         public void PushUserResponse(string message)

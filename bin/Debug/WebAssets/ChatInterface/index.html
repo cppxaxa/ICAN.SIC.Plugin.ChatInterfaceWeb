@@ -1,3 +1,32 @@
+<head>
+    <title>Chat Interface ICAN.SIC</title>
+</head>
+
+
+<script src="Scripts/jquery-1.6.4.min.js"></script>
+<script src="Scripts/jquery.signalR-2.0.3.min.js"></script>
+<script src="http://localhost:20000/signalr/hubs"></script>
+<script type="text/javascript">
+	//$(function () {
+		//Set the hubs URL for the connection
+		$.connection.hub.url = "http://localhost:20000/signalr";
+
+		var chat = $.connection.chatInterfaceSignalRHub;
+		chat.client.addBotMessage = function (message) {
+			addUIBotMessage(message);
+		};
+		chat.client.addUserMessage = function (message) {
+			addUIUserMessage(message);
+		};
+		$.connection.hub.start().done(function () {
+			$('#sendmessage').click(function () {
+				chat.server.addBotMessage($('#message').val());
+			});
+		});
+	//});
+</script>
+
+
 <style>
 body {
   margin: 0;
@@ -160,7 +189,7 @@ function keyPressed(event)
 {
 	if (event.key == "Enter" && document.getElementById("userInputBox").value.trim() != "")
 	{
-		addUIUserMessage(document.getElementById("userInputBox").value);
+		chat.server.processUserMessage(document.getElementById("userInputBox").value);
 		document.getElementById("userInputBox").value = "";
 	}
 }
