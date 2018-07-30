@@ -1,4 +1,4 @@
-﻿namespace ICAN.SIC.Plugin.ChatInterfaceWeb
+﻿namespace ICAN.SIC.Plugin.ChatInterface
 {
     enum Color
     {

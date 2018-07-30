@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ICAN.SIC.Plugin.ChatInterfaceWeb
+namespace ICAN.SIC.Plugin.ChatInterface
 {
     class UIMessage : IUIMessage
     {

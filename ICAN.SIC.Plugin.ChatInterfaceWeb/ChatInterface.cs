@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ICAN.SIC.Plugin.ChatInterfaceWeb
+namespace ICAN.SIC.Plugin.ChatInterface
 {
     public class ChatInterface : AbstractPlugin, IChatInterface
     {
@@ -15,6 +15,10 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb
 
         public ChatInterface()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Hello from ChatInterface");
+            Console.ForegroundColor = ConsoleColor.Gray;
+
             hub.Subscribe<IBotResponse>(this.AddBotResponse);
             hub.Subscribe<IUserResponse>(this.AddUserResponse);
             helper = new ChatInterfaceHelper(this);

@@ -12,7 +12,7 @@ using Microsoft.AspNet.SignalR.Infrastructure;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 
-namespace ICAN.SIC.Plugin.ChatInterfaceWeb
+namespace ICAN.SIC.Plugin.ChatInterface
 {
     public class ChatInterfaceHelper
     {
