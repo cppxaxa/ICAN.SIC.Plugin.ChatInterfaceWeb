@@ -18,4 +18,16 @@ namespace ICAN.SIC.Plugin.ChatInterface
 
         public string Text { get { return this.text; } }
     }
+
+    //public class BotResponse: ICAN.SIC.Abstractions.IMessageVariants.IBotResult
+    //{
+    //    string text;
+
+    //    public BotResponse(string text)
+    //    {
+    //        this.text = text;
+    //    }
+
+    //    public string Text { get { return this.text; } }
+    //}
 }

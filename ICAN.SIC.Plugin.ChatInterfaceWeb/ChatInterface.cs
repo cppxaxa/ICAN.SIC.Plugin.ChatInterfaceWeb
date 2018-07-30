@@ -16,21 +16,23 @@ namespace ICAN.SIC.Plugin.ChatInterface
         public ChatInterface()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Hello from ChatInterface");
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("[INFO] Hello from ChatInterface");
+            Console.ResetColor();
 
-            hub.Subscribe<IBotResponse>(this.AddBotResponse);
+            hub.Subscribe<IBotResult>(this.AddBotResponse);
             hub.Subscribe<IUserResponse>(this.AddUserResponse);
             helper = new ChatInterfaceHelper(this);
         }
 
         private void AddUserResponse(IUserResponse response)
         {
+            Console.WriteLine("ChatInterface: User: " + response.Text);
             helper.AddUserMessage(response.Text);
         }
 
-        private void AddBotResponse(IBotResponse response)
+        private void AddBotResponse(IBotResult response)
         {
+            Console.WriteLine("ChatInterface: Bot: " + response.Text);
             helper.AddBotMessage(response.Text);
         }
 
