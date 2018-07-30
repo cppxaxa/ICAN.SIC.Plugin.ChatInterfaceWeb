@@ -1,4 +1,5 @@
 ﻿using ICAN.SIC.Abstractions.IMessageVariants;
+using Syn.Bot.Siml;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,15 +20,17 @@ namespace ICAN.SIC.Plugin.ChatInterface
         public string Text { get { return this.text; } }
     }
 
-    //public class BotResponse: ICAN.SIC.Abstractions.IMessageVariants.IBotResult
-    //{
-    //    string text;
+    public class BotResult : IBotResult
+    {
+        string text;
 
-    //    public BotResponse(string text)
-    //    {
-    //        this.text = text;
-    //    }
+        public BotResult(string text)
+        {
+            this.text = text;
+        }
 
-    //    public string Text { get { return this.text; } }
-    //}
+        public string Text { get { return this.text; } }
+
+        public ChatResult ChatResult { get { return null; } }
+    }
 }

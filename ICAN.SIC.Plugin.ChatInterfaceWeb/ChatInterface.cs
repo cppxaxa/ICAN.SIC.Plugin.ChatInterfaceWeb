@@ -19,7 +19,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
             Console.WriteLine("[INFO] Hello from ChatInterface");
             Console.ResetColor();
 
-            hub.Subscribe<IBotResult>(this.AddBotResponse);
+            hub.Subscribe<IBotResult>(this.AddBotResult);
             hub.Subscribe<IUserResponse>(this.AddUserResponse);
             helper = new ChatInterfaceHelper(this);
         }
@@ -30,7 +30,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
             helper.AddUserMessage(response.Text);
         }
 
-        private void AddBotResponse(IBotResult response)
+        private void AddBotResult(IBotResult response)
         {
             Console.WriteLine("ChatInterface: Bot: " + response.Text);
             helper.AddBotMessage(response.Text);
