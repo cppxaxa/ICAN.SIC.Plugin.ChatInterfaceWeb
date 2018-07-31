@@ -41,7 +41,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
             Debug.Assert(signalRHub != null, "No chatInterface signalR running hub found");
 
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("[INFO] HTTP ChatInterface started at {0}/", url);
+            Console.WriteLine("[INFO] HTTP ChatInterface started at {0}/ChatInterface", url);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
