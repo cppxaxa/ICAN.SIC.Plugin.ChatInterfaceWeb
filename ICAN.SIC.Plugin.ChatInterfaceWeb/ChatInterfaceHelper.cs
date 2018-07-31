@@ -25,7 +25,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
             Startup.chatInterface = chatInterface;
 
             string port = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfacePort"];
-
+            
             Debug.Assert(port != null, "Please add a key to configuration as follows:" +
                                     "<configuration>" +
                                       "<runtime>" +
@@ -33,7 +33,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
                                           "<add key = \"Port\" value = \"20000\" />" +
                                         "</appSettings>" +
                                       "</runtime>" +
-                                    "</configuration> ");
+                                    "</configuration>");
 
             string url = "http://localhost:" + port;
             WebApp.Start<Startup>(url);

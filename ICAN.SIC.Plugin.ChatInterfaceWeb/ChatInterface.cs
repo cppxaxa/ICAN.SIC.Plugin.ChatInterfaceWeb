@@ -13,7 +13,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
         ChatInterfaceHelper helper;
         ChatInterfaceUtility utility = new ChatInterfaceUtility();
 
-        public ChatInterface()
+        public ChatInterface() : base("ChatInterface")
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("[INFO] Hello from ChatInterface");
