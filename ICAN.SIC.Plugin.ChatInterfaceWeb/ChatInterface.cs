@@ -26,13 +26,11 @@ namespace ICAN.SIC.Plugin.ChatInterface
 
         private void AddUserResponse(IUserResponse response)
         {
-            Console.WriteLine("ChatInterface: User: " + response.Text);
             helper.AddUserMessage(response.Text);
         }
 
         private void AddBotResult(IBotResult response)
         {
-            Console.WriteLine("ChatInterface: Bot: " + response.Text);
             helper.AddBotMessage(response.Text);
         }
 
