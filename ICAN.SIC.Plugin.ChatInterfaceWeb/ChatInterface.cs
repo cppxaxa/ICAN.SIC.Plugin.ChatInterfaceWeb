@@ -25,6 +25,10 @@ namespace ICAN.SIC.Plugin.ChatInterface
             helper = new ChatInterfaceHelper(this);
 
             ChatApiController.hub = hub;
+
+            string host = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfaceHost"];
+            string port = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfacePort"];
+            utility.GenerateIndexHtmlFromTemplate(host, port);
         }
 
         private void AddUserResponse(IUserResponse response)

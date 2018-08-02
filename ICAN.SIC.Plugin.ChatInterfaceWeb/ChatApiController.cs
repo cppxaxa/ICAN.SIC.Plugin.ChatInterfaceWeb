@@ -33,7 +33,7 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb
             UserResponse userResponse = new UserResponse(value);
             hub.Publish<UserResponse>(userResponse);
 
-            Console.Write("[INFO] /ChatApi: UserResponse published: {0}", value);
+            Console.WriteLine("[INFO] /ChatApi: UserResponse published: {0}", value);
 
             return "Acknowledged";
         }
