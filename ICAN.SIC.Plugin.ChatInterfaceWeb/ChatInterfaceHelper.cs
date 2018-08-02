@@ -11,6 +11,7 @@ using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Infrastructure;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
+using System.Web.Http;
 
 namespace ICAN.SIC.Plugin.ChatInterface
 {
@@ -31,7 +32,8 @@ namespace ICAN.SIC.Plugin.ChatInterface
                                     "<configuration>" +
                                       "<runtime>" +
                                         "<appSettings>" +
-                                          "<add key = \"Port\" value = \"20000\" />" +
+                                          "<add key = \"ChatInterfaceHost\" value = \"localhost\" />" +
+                                          "<add key = \"ChatInterfacePort\" value = \"20000\" />" +
                                         "</appSettings>" +
                                       "</runtime>" +
                                     "</configuration>");
@@ -41,9 +43,17 @@ namespace ICAN.SIC.Plugin.ChatInterface
             signalRHub = GlobalHost.ConnectionManager.GetHubContext<ChatInterfaceSignalRHub>();
             Debug.Assert(signalRHub != null, "No chatInterface signalR running hub found");
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("[INFO] HTTP ChatInterface started at {0}/ChatInterface", url);
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write("[INFO] HTTP ChatInterface started at ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("{0}/ChatInterface", url);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write("[INFO] HTTP ChatApi started at ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("{0}/ChatApi", url);
+            Console.ResetColor();
+            Console.WriteLine("[INFO] GET /ChatApi : Help menu");
+            Console.WriteLine("[INFO] POST /ChatApi : Post an IUserResponse");
         }
 
         public void AddBotMessage(string message)
@@ -81,6 +91,14 @@ namespace ICAN.SIC.Plugin.ChatInterface
                 options.StaticFileOptions.ServeUnknownFileTypes = true;
                 options.DefaultFilesOptions.DefaultFileNames = new[] { "index.html", "Default.html" };
                 app.UseFileServer(options);
+
+                HttpConfiguration config = new HttpConfiguration();
+                config.Routes.MapHttpRoute(
+                    name: "ChatApi",
+                    routeTemplate: "{controller}/{id}",
+                    defaults: new { id = RouteParameter.Optional }
+                );
+                app.UseWebApi(config);
             }
         }
         public class ChatInterfaceSignalRHub : Microsoft.AspNet.SignalR.Hub

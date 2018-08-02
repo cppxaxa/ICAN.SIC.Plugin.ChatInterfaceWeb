@@ -1,5 +1,6 @@
 ﻿using ICAN.SIC.Abstractions;
 using ICAN.SIC.Abstractions.IMessageVariants;
+using ICAN.SIC.Plugin.ChatInterfaceWeb;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace ICAN.SIC.Plugin.ChatInterface
             hub.Subscribe<IBotResult>(this.AddBotResult);
             hub.Subscribe<IUserResponse>(this.AddUserResponse);
             helper = new ChatInterfaceHelper(this);
+
+            ChatApiController.hub = hub;
         }
 
         private void AddUserResponse(IUserResponse response)

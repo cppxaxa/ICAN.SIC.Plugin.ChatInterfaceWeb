@@ -69,8 +69,17 @@
     <Reference Include="Syn.Bot, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.6\lib\net45\System.Web.Http.Owin.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -80,6 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatApiController.cs" />
     <Compile Include="ChatInterface.cs" />
     <Compile Include="ChatInterfaceHelper.cs" />
     <Compile Include="ChatInterfaceUtility.cs" />
@@ -90,8 +100,19 @@
     <Compile Include="DataTypes\UserResponse.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WebAssets\ChatInterface\background.jpg" />
+    <Content Include="WebAssets\ChatInterface\index.html" />
+    <Content Include="WebAssets\ChatInterface\Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="WebAssets\ChatInterface\Scripts\jquery-1.6.4.js" />
+    <Content Include="WebAssets\ChatInterface\Scripts\jquery-1.6.4.min.js" />
+    <Content Include="WebAssets\ChatInterface\Scripts\jquery.signalR-2.0.3.js" />
+    <Content Include="WebAssets\ChatInterface\Scripts\jquery.signalR-2.0.3.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
