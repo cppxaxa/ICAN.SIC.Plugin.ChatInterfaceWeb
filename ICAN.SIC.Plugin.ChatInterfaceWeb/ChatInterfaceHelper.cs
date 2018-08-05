@@ -66,6 +66,11 @@ namespace ICAN.SIC.Plugin.ChatInterface
             signalRHub.Clients.All.addUserMessage(message);
         }
 
+        public void AddInfoLog(string message)
+        {
+            signalRHub.Clients.All.addUIInfoLogMessage(message);
+        }
+
         class Startup
         {
             public static IChatInterface chatInterface;
@@ -113,6 +118,11 @@ namespace ICAN.SIC.Plugin.ChatInterface
             public void AddBotMessage(string message)
             {
                 Clients.All.addBotMessage(message);
+            }
+
+            public void AddInfoLog(string message)
+            {
+                Clients.All.addUIInfoLogMessage(message);
             }
 
             public void ProcessUserMessage(string message)

@@ -22,6 +22,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
 
             hub.Subscribe<IBotResult>(this.AddBotResult);
             hub.Subscribe<IUserResponse>(this.AddUserResponse);
+            hub.Subscribe<ILog>(this.AddInfoLog);
             helper = new ChatInterfaceHelper(this);
 
             ChatApiController.hub = hub;
@@ -34,6 +35,27 @@ namespace ICAN.SIC.Plugin.ChatInterface
         private void AddUserResponse(IUserResponse response)
         {
             helper.AddUserMessage(response.Text);
+        }
+
+        private void AddInfoLog(ILog response)
+        {
+            string prefix = String.Empty;
+            switch(response.LogType)
+            {
+                case LogType.Debug:
+                    prefix = "[DEBUG] ";
+                    break;
+                case LogType.Error:
+                    prefix = "[ERROR] ";
+                    break;
+                case LogType.Info:
+                    prefix = "[INFO] ";
+                    break;
+                case LogType.Warning:
+                    prefix = "[WARNING] ";
+                    break;
+            }
+            helper.AddInfoLog(prefix + response.Message);
         }
 
         private void AddBotResult(IBotResult response)
