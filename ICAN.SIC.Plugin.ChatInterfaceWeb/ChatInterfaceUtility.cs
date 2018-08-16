@@ -12,7 +12,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
         public void GenerateIndexHtmlFromTemplate(string host, string port)
         {
             string indexHtml = String.Empty;
-            foreach (var line in File.ReadLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"WebAssets\ChatInterface\indexTemplate.html")))
+            foreach (var line in File.ReadLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"WebAssets" + Path.DirectorySeparatorChar + "ChatInterface" + Path.DirectorySeparatorChar + "indexTemplate.html")))
             {
                 string processedLine = line;
                 processedLine = processedLine.Replace("{host}", host);
@@ -20,7 +20,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
                 indexHtml += processedLine + "\n";
             }
 
-            File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"WebAssets\ChatInterface\index.html"), indexHtml);
+            File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"WebAssets" + Path.DirectorySeparatorChar + "ChatInterface" + Path.DirectorySeparatorChar + "index.html"), indexHtml);
         }
     }
 }

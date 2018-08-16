@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -16,7 +17,7 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb.Host
             //chat.TestBotResponse("Hello User");
             //Console.WriteLine("Exit: ");
 
-            Assembly assembly = Assembly.LoadFrom(@"D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.dll");
+            Assembly assembly = Assembly.LoadFrom(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ICAN.SIC.Plugin.ChatInterfaceWeb.dll"));
 
             ChatInterface.ChatInterface chatInterface = (ChatInterface.ChatInterface)assembly.CreateInstance("ICAN.SIC.Plugin.ChatInterface.ChatInterface");
             Console.WriteLine("Done");
