@@ -5,3 +5,9 @@ D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceW
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.csproj.CoreCompileInputs.cache
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.pdb
+J:\Project ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe.config
+J:\Project ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe
+J:\Project ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.pdb
+J:\Project ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.csprojResolveAssemblyReference.cache
+J:\Project ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe
+J:\Project ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.pdb

@@ -12,6 +12,7 @@ using Microsoft.AspNet.SignalR.Infrastructure;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using System.Web.Http;
+using ICAN.SIC.Abstractions.IMessageVariants;
 
 namespace ICAN.SIC.Plugin.ChatInterface
 {
@@ -71,6 +72,12 @@ namespace ICAN.SIC.Plugin.ChatInterface
             signalRHub.Clients.All.addUIInfoLogMessage(message);
         }
 
+        public void AddChatMessage(string message)
+        {
+            Console.WriteLine("Chat Message received at ChatInterface");
+            signalRHub.Clients.All.add(message);
+        }
+
         class Startup
         {
             public static IChatInterface chatInterface;
@@ -123,6 +130,11 @@ namespace ICAN.SIC.Plugin.ChatInterface
             public void AddInfoLog(string message)
             {
                 Clients.All.addUIInfoLogMessage(message);
+            }
+
+            public void AddChatMessage(string message)
+            {
+                Clients.All.addChatMessage(message);
             }
 
             public void ProcessUserMessage(string message)

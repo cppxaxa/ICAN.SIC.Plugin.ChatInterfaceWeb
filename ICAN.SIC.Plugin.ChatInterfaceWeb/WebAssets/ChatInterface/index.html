@@ -18,6 +18,9 @@
 			chat.client.addUserMessage = function (message) {
 				addUIUserMessage(message);
 			};
+			chat.client.addChatMessage = function (message) {
+			    addChatMessage(message);
+			};
 			$.connection.hub.start().done(function () {
 				$('#sendmessage').click(function () {
 					chat.server.addBotMessage($('#message').val());
@@ -205,6 +208,19 @@
 	  </div>');
 		document.getElementById("container").appendChild(userMessageTemplate);
 		updateGUI(window.visualViewport.width);
+	}
+
+	function addChatMessage(message) {
+	    var userMessageTemplate = createElementFromHTML('<div class="bubble alt">\
+		<div class="txt">\
+		  <p class="name alt">Me<span> </span></p>\
+		  <p class="message">' + message + '</p>\
+		  <span class="timestamp">' + (new Date()).getHours() + ':' + (new Date()).getMinutes() + '</span>\
+		</div>\
+		<div class="bubble-arrow alt"></div>\
+	  </div>');
+	    document.getElementById("container").appendChild(userMessageTemplate);
+	    updateGUI(window.visualViewport.width);
 	}
 
 	window.addEventListener('load', function() {

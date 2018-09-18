@@ -94,6 +94,7 @@
     <Compile Include="ChatInterface.cs" />
     <Compile Include="ChatInterfaceHelper.cs" />
     <Compile Include="ChatInterfaceUtility.cs" />
+    <Compile Include="DataTypes\ChatMessage.cs" />
     <Compile Include="DataTypes\IUIMessage.cs" />
     <Compile Include="IChatInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

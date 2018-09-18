@@ -23,6 +23,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
             hub.Subscribe<IBotResult>(this.AddBotResult);
             hub.Subscribe<IUserResponse>(this.AddUserResponse);
             hub.Subscribe<ILog>(this.AddInfoLog);
+            hub.Subscribe<IChatMessage>(this.ParseChatMessage);
             helper = new ChatInterfaceHelper(this);
 
             ChatApiController.hub = hub;
@@ -30,6 +31,11 @@ namespace ICAN.SIC.Plugin.ChatInterface
             string host = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfaceHost"];
             string port = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfacePort"];
             utility.GenerateIndexHtmlFromTemplate(host, port);
+        }
+
+        private void ParseChatMessage(IChatMessage chatMessage)
+        {
+            helper.AddChatMessage(chatMessage.MarkupContent);
         }
 
         private void AddUserResponse(IUserResponse response)
