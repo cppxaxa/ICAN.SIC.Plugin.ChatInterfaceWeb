@@ -18,8 +18,9 @@
 			chat.client.addUserMessage = function (message) {
 				addUIUserMessage(message);
 			};
-			chat.client.addChatMessage = function (message) {
-			    addChatMessage(message);
+			chat.client.addChatMessage = function (htmlContent) {
+			    //addUIUserMessage(htmlContent);
+			    addUIChatMessage(htmlContent);
 			};
 			$.connection.hub.start().done(function () {
 				$('#sendmessage').click(function () {
@@ -210,17 +211,22 @@
 		updateGUI(window.visualViewport.width);
 	}
 
-	function addChatMessage(message) {
-	    var userMessageTemplate = createElementFromHTML('<div class="bubble alt">\
+	function addUIChatMessage(htmlContent) {
+	    if (htmlContent.toString().trim() == "")
+			htmlContent = '<i style="color: grey;">[Acknowledged]</i>';
+
+		//<p class="message">' + htmlContent + '</p>\
+			
+		var botMessageTemplate = createElementFromHTML('<div class="bubble">\
 		<div class="txt">\
-		  <p class="name alt">Me<span> </span></p>\
-		  <p class="message">' + message + '</p>\
+		  <p class="name">Information</p>\
+		  ' + htmlContent + '\
 		  <span class="timestamp">' + (new Date()).getHours() + ':' + (new Date()).getMinutes() + '</span>\
 		</div>\
-		<div class="bubble-arrow alt"></div>\
+		<div class="bubble-arrow"></div>\
 	  </div>');
-	    document.getElementById("container").appendChild(userMessageTemplate);
-	    updateGUI(window.visualViewport.width);
+		document.getElementById("container").appendChild(botMessageTemplate);
+		updateGUI(window.visualViewport.width);
 	}
 
 	window.addEventListener('load', function() {

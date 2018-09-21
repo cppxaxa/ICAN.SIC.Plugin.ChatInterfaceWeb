@@ -75,7 +75,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
         public void AddChatMessage(string message)
         {
             Console.WriteLine("Chat Message received at ChatInterface");
-            signalRHub.Clients.All.add(message);
+            signalRHub.Clients.All.addChatMessage(message);
         }
 
         class Startup

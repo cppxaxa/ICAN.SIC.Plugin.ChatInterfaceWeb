@@ -79,5 +79,15 @@ namespace ICAN.SIC.Plugin.ChatInterface
         {
             helper.AddBotMessage(v);
         }
+
+        public void TestUserMessage(string v)
+        {
+            helper.AddUserMessage(v);
+        }
+
+        public void TestChatMessage(string v)
+        {
+            helper.AddChatMessage(v);
+        }
     }
 }

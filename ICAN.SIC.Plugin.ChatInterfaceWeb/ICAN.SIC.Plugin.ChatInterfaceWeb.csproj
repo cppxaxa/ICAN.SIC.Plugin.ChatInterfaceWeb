@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="WebAssets\ChatInterface\background.jpg" />
-    <Content Include="WebAssets\ChatInterface\index.html" />
+    <Content Include="WebAssets\ChatInterface\indexTemplate.html" />
     <Content Include="WebAssets\ChatInterface\Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="WebAssets\ChatInterface\Scripts\jquery-1.6.4.js" />
     <Content Include="WebAssets\ChatInterface\Scripts\jquery-1.6.4.min.js" />
