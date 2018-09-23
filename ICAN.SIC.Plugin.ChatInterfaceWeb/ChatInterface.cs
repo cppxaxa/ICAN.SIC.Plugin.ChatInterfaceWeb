@@ -24,13 +24,28 @@ namespace ICAN.SIC.Plugin.ChatInterface
             hub.Subscribe<IUserResponse>(this.AddUserResponse);
             hub.Subscribe<ILog>(this.AddInfoLog);
             hub.Subscribe<IChatMessage>(this.ParseChatMessage);
+            hub.Subscribe<IMachineMessage>(this.AddMachineMessage);
+            hub.Subscribe<IUserFriendlyMachineMessage>(this.AddUserFriendlyMachineMessage);
+            
             helper = new ChatInterfaceHelper(this);
 
             ChatApiController.hub = hub;
+            MachineMessageApiController.hub = hub;
 
             string host = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfaceHost"];
             string port = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfacePort"];
             utility.GenerateIndexHtmlFromTemplate(host, port);
+        }
+
+        private void AddUserFriendlyMachineMessage(IUserFriendlyMachineMessage message)
+        {
+            Console.WriteLine("User Friendly Machine Message added: " + message.PrettyMessage);
+            helper.AddUserFriendlyMachineMessage(message.PrettyMessage);
+        }
+
+        private void AddMachineMessage(IMachineMessage machineMessage)
+        {
+            helper.AddMachineMessage(machineMessage.Message);
         }
 
         private void ParseChatMessage(IChatMessage chatMessage)
@@ -73,6 +88,12 @@ namespace ICAN.SIC.Plugin.ChatInterface
         {
             IUserResponse response = new UserResponse(message);
             hub.Publish<IUserResponse>(response);
+        }
+
+        public void PushMachineMessage(string message)
+        {
+            IMachineMessage machineMessage = new MachineMessage(message);
+            hub.Publish<IMachineMessage>(machineMessage);
         }
 
         public void TestBotResponse(string v)

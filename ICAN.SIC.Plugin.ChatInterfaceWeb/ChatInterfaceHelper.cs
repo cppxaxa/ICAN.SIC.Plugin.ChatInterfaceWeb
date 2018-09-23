@@ -55,6 +55,14 @@ namespace ICAN.SIC.Plugin.ChatInterface
             Console.ResetColor();
             Console.WriteLine("[INFO] GET /ChatApi : Help menu");
             Console.WriteLine("[INFO] POST /ChatApi : Post an IUserResponse");
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write("[INFO] HTTP MachineMessageApi started at ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("{0}/MachineMessageApi", url);
+            Console.ResetColor();
+            Console.WriteLine("[INFO] GET /MachineMessageApi : Help menu");
+            Console.WriteLine("[INFO] POST /MachineMessageApi : Post an IMachineMessage");
         }
 
         public void AddBotMessage(string message)
@@ -69,13 +77,23 @@ namespace ICAN.SIC.Plugin.ChatInterface
 
         public void AddInfoLog(string message)
         {
-            signalRHub.Clients.All.addUIInfoLogMessage(message);
+            signalRHub.Clients.All.addChatMessage(message);
         }
 
         public void AddChatMessage(string message)
         {
             Console.WriteLine("Chat Message received at ChatInterface");
             signalRHub.Clients.All.addChatMessage(message);
+        }
+
+        public void AddMachineMessage(string message)
+        {
+            signalRHub.Clients.All.addChatMessage("<p style=\"font-size: 12px;\">MACHINE MESSAGE</p> <p style=\"font-size: 12px;\">" + message + "<p>");
+        }
+
+        public void AddUserFriendlyMachineMessage(string message)
+        {
+            signalRHub.Clients.All.addChatMessage("<p style=\"font-size: 12px;\">USER-MACHINE MESSAGE</p> <p style=\"font-size: 12px;\">" + message + "<p>");
         }
 
         class Startup
@@ -140,6 +158,16 @@ namespace ICAN.SIC.Plugin.ChatInterface
             public void ProcessUserMessage(string message)
             {
                 chatInterface.PushUserResponse(message);
+            }
+
+            public void AddMachineMessage(string message)
+            {
+                Clients.All.addUIInfoLogMessage("MACHINE MESSAGE: <p style=\"font-size: 11px;\">" + message + "<p>");
+            }
+
+            public void AddUserFriendlyMachineMessage(string message)
+            {
+                Clients.All.addUIInfoLogMessage("USER-MACHINE MESSAGE: <p style=\"font-size: 11px;\">" + message + "<p>");
             }
         }
     }

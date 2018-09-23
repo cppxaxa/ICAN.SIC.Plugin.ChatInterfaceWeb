@@ -97,6 +97,8 @@
     <Compile Include="DataTypes\ChatMessage.cs" />
     <Compile Include="DataTypes\IUIMessage.cs" />
     <Compile Include="IChatInterface.cs" />
+    <Compile Include="DataTypes\MachineMessage.cs" />
+    <Compile Include="MachineMessageApiController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataTypes\UIMessage.cs" />
     <Compile Include="DataTypes\UserResponse.cs" />
