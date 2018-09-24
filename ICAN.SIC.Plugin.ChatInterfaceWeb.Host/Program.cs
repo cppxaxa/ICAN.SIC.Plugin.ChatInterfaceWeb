@@ -1,4 +1,5 @@
-﻿using ICAN.SIC.Abstractions.IMessageVariants;
+﻿using ICAN.SIC.Abstractions;
+using ICAN.SIC.Abstractions.IMessageVariants;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,7 +21,8 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb.Host
 
             Assembly assembly = Assembly.LoadFrom(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ICAN.SIC.Plugin.ChatInterfaceWeb.dll"));
 
-            ChatInterface.ChatInterface chatInterface = (ChatInterface.ChatInterface)assembly.CreateInstance("ICAN.SIC.Plugin.ChatInterface.ChatInterface");
+            IPlugin chatInterfacePlugin = (IPlugin)assembly.CreateInstance("ICAN.SIC.Plugin.ChatInterface.ChatInterface");
+            ChatInterface.ChatInterface chatInterface = (ChatInterface.ChatInterface)chatInterfacePlugin;
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadLine();
