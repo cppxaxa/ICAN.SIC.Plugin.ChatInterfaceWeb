@@ -333,6 +333,18 @@
 			
 			updateUIEndRecording();
 		});
+		
+		recognition.speechend = function() {
+			updateUIEndRecording();
+		}
+		
+		recognition.onend = function() {
+			updateUIEndRecording();
+		}
+		
+		recognition.onerror = function(e) {
+			updateUIEndRecording();
+		}
 	}
 	function startSpeechRecognition(){
 		recognition.start();
@@ -355,7 +367,21 @@
 			}
 		});
 		
+		
 		console.log("Press 's' to start speech recognition");
+		
+		
+		$('#recButton').addClass("notRec");
+		
+		
+		$('#recButton').click(function(){
+			if (recordingRunning){
+				recordingRunning = false;
+			}
+			else{
+				startSpeechRecognition();
+			}
+		});
 	});
 
 </script>
@@ -374,19 +400,7 @@
 <input type="button" value="" id="userInputEnter" onclick="userInputEnterPressed(event)" />
 
 <script>
-	$('#recButton').addClass("notRec");
-
 	var recordingRunning = false;
-
-	$('#recButton').click(function(){
-		if (recordingRunning){
-			recordingRunning = false;
-		}
-		else{
-			startSpeechRecognition();
-		}
-	});
-	
 	
 	
 	function updateUIStartRecording(){
