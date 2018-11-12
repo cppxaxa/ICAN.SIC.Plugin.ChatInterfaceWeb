@@ -30,8 +30,8 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb
                 return "Server Api Error";
             }
 
-            IMachineMessage userResponse = new MachineMessage(value);
-            hub.Publish<IMachineMessage>(userResponse);
+            IMachineMessage machineMessage = new MachineMessage(value);
+            hub.Publish<IMachineMessage>(machineMessage);
 
             Console.WriteLine("[INFO] /MachineMessageApi: MachineMessage published: {0}", value);
 

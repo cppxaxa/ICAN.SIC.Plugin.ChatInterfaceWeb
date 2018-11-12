@@ -23,6 +23,8 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb.Host
 
             IPlugin chatInterfacePlugin = (IPlugin)assembly.CreateInstance("ICAN.SIC.Plugin.ChatInterface.ChatInterface");
             ChatInterface.ChatInterface chatInterface = (ChatInterface.ChatInterface)chatInterfacePlugin;
+            
+            chatInterface.Hub.Subscribe<IMachineMessage>(PrintMachineMessage);
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadLine();
@@ -35,9 +37,13 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb.Host
             chatInterface.Hub.Publish<IChatMessage>(sample);
 
 
-
             Console.WriteLine("Done");
             Console.ReadKey();
+        }
+
+        private static void PrintMachineMessage(IMachineMessage message)
+        {
+            Console.WriteLine("[INFO] IMachineMessage: " + message.Message);
         }
     }
 }
