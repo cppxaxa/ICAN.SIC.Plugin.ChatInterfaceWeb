@@ -31,6 +31,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
 
             ChatApiController.hub = hub;
             MachineMessageApiController.hub = hub;
+            MachineImageMessageApiController.hub = hub;
 
             string host = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfaceHost"];
             string port = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfacePort"];

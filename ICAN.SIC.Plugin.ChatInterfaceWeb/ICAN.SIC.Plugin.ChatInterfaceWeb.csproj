@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HttpMultipartParser, Version=2.2.4.0, Culture=neutral, PublicKeyToken=6d293681fa6c7a03, processorArchitecture=MSIL">
+      <HintPath>..\packages\HttpMultipartParser.2.2.4\lib\net45\HttpMultipartParser.dll</HintPath>
+    </Reference>
     <Reference Include="ICAN.SIC.Abstractions">
       <HintPath>..\..\ICAN.SIC\bin\Debug\ICAN.SIC.Abstractions.dll</HintPath>
     </Reference>
@@ -64,12 +67,19 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Sprache, Version=1.10.0.35, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sprache.1.10.0.35\lib\net40\Sprache.dll</HintPath>
     </Reference>
     <Reference Include="Syn.Bot, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -98,6 +108,7 @@
     <Compile Include="DataTypes\IUIMessage.cs" />
     <Compile Include="IChatInterface.cs" />
     <Compile Include="DataTypes\MachineMessage.cs" />
+    <Compile Include="MachineImageMessageApiController.cs" />
     <Compile Include="MachineMessageApiController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataTypes\UIMessage.cs" />

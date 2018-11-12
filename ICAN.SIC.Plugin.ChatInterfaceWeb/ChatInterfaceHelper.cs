@@ -124,7 +124,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
 
                 HttpConfiguration config = new HttpConfiguration();
                 config.Routes.MapHttpRoute(
-                    name: "ChatApi",
+                    name: "ChatController",
                     routeTemplate: "{controller}/{id}",
                     defaults: new { id = RouteParameter.Optional }
                 );
