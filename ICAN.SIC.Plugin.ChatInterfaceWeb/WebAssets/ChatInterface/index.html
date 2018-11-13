@@ -6,13 +6,13 @@
 
 <script src="Scripts/jquery-1.6.4.min.js"></script>
 <script src="Scripts/jquery.signalR-2.0.3.min.js"></script>
-<script src="http://{host}:{port}/signalr/hubs"></script>
+<script src="http://localhost:20000/signalr/hubs"></script>
 <script src="js/RecordingButton.js"></script>
 <script src="js/TextToSpeechChrome.js"></script>
 <script type="text/javascript">
     //$(function () {
     //Set the hubs URL for the connection
-    $.connection.hub.url = "http://{host}:{port}/signalr";
+    $.connection.hub.url = "http://localhost:20000/signalr";
 
     var chat = $.connection.chatInterfaceSignalRHub;
     chat.client.addBotMessage = function (message) {

@@ -83,7 +83,7 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb
         public string Post()
         {
             var stream = new MemoryStream();
-            this.ControllerContext.Request.Content.CopyToAsync(stream).Wait();
+            ControllerContext.Request.Content.CopyToAsync(stream).Wait();
 
             stream.Seek(0, SeekOrigin.Begin);
 
@@ -110,7 +110,11 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb
                     ImageParsedSuccessfully = true;
 
                     // Publish IMachineImageMessage here only
-                    MachineImageMessage imageMessage = new MachineImageMessage(resourceIdForImage, image);
+                    string host = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfaceHost"];
+                    string port = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfacePort"];
+                    string networkLocalHttpUri = "http://" + host + ":" + port + "/MachineImageMessageApi/" + resourceIdForImage;
+                    string deviceLocalFilePath = Path.Combine(uploadsDirectory, resourceIdForImage);
+                    MachineImageMessage imageMessage = new MachineImageMessage(resourceIdForImage, image, networkLocalHttpUri, deviceLocalFilePath);
                     hub?.Publish<IMachineImageMessage>(imageMessage);
                 }
                 catch

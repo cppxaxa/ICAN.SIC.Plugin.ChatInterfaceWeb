@@ -25,6 +25,7 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb.Host
             ChatInterface.ChatInterface chatInterface = (ChatInterface.ChatInterface)chatInterfacePlugin;
             
             chatInterface.Hub.Subscribe<IMachineMessage>(PrintMachineMessage);
+            chatInterface.Hub.Subscribe<IMachineImageMessage>(PrintMachineImageMessage);
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadLine();
@@ -39,6 +40,11 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb.Host
 
             Console.WriteLine("Done");
             Console.ReadKey();
+        }
+
+        private static void PrintMachineImageMessage(IMachineImageMessage message)
+        {
+            Console.WriteLine(string.Format("[INFO] IMachineImageMessage: Filename={0}, Uri={1}", message.Filename, message.NetworkLocalHttpUri));
         }
 
         private static void PrintMachineMessage(IMachineMessage message)

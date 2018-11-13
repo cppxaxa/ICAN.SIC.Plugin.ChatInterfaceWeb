@@ -25,3 +25,4 @@ D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb - Copy\ICAN.SIC.Plugin.ChatInt
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb - Copy\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.dll.config
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb - Copy\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.dll
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb - Copy\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.pdb
+F:\Projects\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.csprojAssemblyReference.cache
