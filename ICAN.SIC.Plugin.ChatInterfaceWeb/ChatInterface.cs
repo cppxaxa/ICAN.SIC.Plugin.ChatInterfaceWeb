@@ -38,6 +38,11 @@ namespace ICAN.SIC.Plugin.ChatInterface
             utility.GenerateIndexHtmlFromTemplate(host, port);
         }
 
+        private void AddMachineImageMessage(IMachineImageMessage message)
+        {
+            helper.AddMachineImageMessage(message.Filename, message.NetworkLocalHttpUri, message.Image);
+        }
+
         private void AddUserFriendlyMachineMessage(IUserFriendlyMachineMessage message)
         {
             Console.WriteLine("User Friendly Machine Message added: " + message.PrettyMessage);

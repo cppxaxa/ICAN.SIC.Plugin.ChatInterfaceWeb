@@ -13,6 +13,7 @@ using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using System.Web.Http;
 using ICAN.SIC.Abstractions.IMessageVariants;
+using System.Drawing;
 
 namespace ICAN.SIC.Plugin.ChatInterface
 {
@@ -63,6 +64,25 @@ namespace ICAN.SIC.Plugin.ChatInterface
             Console.ResetColor();
             Console.WriteLine("[INFO] GET /MachineMessageApi : Help menu");
             Console.WriteLine("[INFO] POST /MachineMessageApi : Post an IMachineMessage");
+        }
+
+        public void AddMachineImageMessage(string filename, string networkLocalHttpUri, Image image)
+        {
+            string htmlContent = "";
+
+            List<string> structLines = new List<string>
+            {
+                "<img src=\"",
+                networkLocalHttpUri,
+                "\" style=\"width:500px; height: auto;\"></img>",
+            };
+
+            foreach (var line in structLines)
+            {
+                htmlContent += line;
+            }
+
+            signalRHub.Clients.All.addUserMessage(htmlContent);
         }
 
         public void AddBotMessage(string message)
