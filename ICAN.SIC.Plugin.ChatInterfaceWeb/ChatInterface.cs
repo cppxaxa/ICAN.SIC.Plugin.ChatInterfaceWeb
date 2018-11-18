@@ -26,6 +26,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
             hub.Subscribe<IChatMessage>(this.ParseChatMessage);
             hub.Subscribe<IMachineMessage>(this.AddMachineMessage);
             hub.Subscribe<IUserFriendlyMachineMessage>(this.AddUserFriendlyMachineMessage);
+            hub.Subscribe<IMachineImageMessage>(this.AddMachineImageMessage);
             
             helper = new ChatInterfaceHelper(this);
 

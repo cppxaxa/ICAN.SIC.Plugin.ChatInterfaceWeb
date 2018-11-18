@@ -14,6 +14,7 @@ using Microsoft.Owin.StaticFiles;
 using System.Web.Http;
 using ICAN.SIC.Abstractions.IMessageVariants;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace ICAN.SIC.Plugin.ChatInterface
 {
@@ -21,6 +22,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
     {
         IHubContext signalRHub;
         IChatInterface chatInterface;
+        ChatInterfaceUtility utility = new ChatInterfaceUtility();
 
         public ChatInterfaceHelper(IChatInterface chatInterface)
         {
@@ -70,11 +72,14 @@ namespace ICAN.SIC.Plugin.ChatInterface
         {
             string htmlContent = "";
 
+            string jpegEncodedImageString = utility.ImageToBase64(image, ImageFormat.Jpeg);
+
             List<string> structLines = new List<string>
             {
-                "<img src=\"",
-                networkLocalHttpUri,
-                "\" style=\"width:500px; height: auto;\"></img>",
+                "<img style=\"box-shadow: 0px 0px 5px 5px rgba(100, 100, 100, 0.2); margin: 10px; margin-bottom: 14px; border-radius: 5px;\" src=\"",
+                "data:image/jpeg;base64,",
+                jpegEncodedImageString,
+                "\" style=\"width:500px; height: auto;\"></img>"
             };
 
             foreach (var line in structLines)
@@ -82,7 +87,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
                 htmlContent += line;
             }
 
-            signalRHub.Clients.All.addUserMessage(htmlContent);
+            signalRHub.Clients.All.addChatMessage(htmlContent);
         }
 
         public void AddBotMessage(string message)

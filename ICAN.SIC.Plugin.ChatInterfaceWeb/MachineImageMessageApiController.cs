@@ -25,7 +25,7 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb
         // GET MachineImageMessageApi 
         public IEnumerable<string> Get()
         {
-            return new string[] { "GET /MachineImageMessageApi Get this help", "POST /MachineImageMessageApi : Post a IMachineImageMessage" };
+            return new string[] { "GET /MachineImageMessageApi : Get this help", "POST /MachineImageMessageApi : Post a IMachineImageMessage" };
         }
 
         // GET MachineImageMessageApi 
@@ -116,6 +116,12 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb
                     string deviceLocalFilePath = Path.Combine(uploadsDirectory, resourceIdForImage);
                     MachineImageMessage imageMessage = new MachineImageMessage(resourceIdForImage, image, networkLocalHttpUri, deviceLocalFilePath);
                     hub?.Publish<IMachineImageMessage>(imageMessage);
+
+                    // Posting the information as IMachineMessage
+                    IMachineMessage message = new MachineMessage(string.Format("MachineImageMessage published: {0}, Image parsing done: {1}, PossibleAccessLink: {2}", resourceIdForImage, ImageParsedSuccessfully, networkLocalHttpUri));
+                    hub?.Publish<IMachineMessage>(message);
+
+                    Console.WriteLine("[INFO] /MachineImageMessageApi: MachineImageMessage published: {0}, Image parsing done: {1}, PossibleAccessLink: {2}", resourceIdForImage, ImageParsedSuccessfully, networkLocalHttpUri);
                 }
                 catch
                 {
@@ -132,14 +138,6 @@ namespace ICAN.SIC.Plugin.ChatInterfaceWeb
                     Console.ResetColor();
                     return "Server Api Error";
                 }
-
-                // Posting the information as IMachineMessage
-                IMachineMessage message = new MachineMessage(string.Format("MachineImageMessage published: {0}, Image parsing done: {1}", resourceIdForImage, ImageParsedSuccessfully));
-                hub?.Publish<IMachineMessage>(message);
-
-                Console.WriteLine("[INFO] /MachineImageMessageApi: MachineImageMessage published: {0}, Image parsing done: {1}", resourceIdForImage, ImageParsedSuccessfully);
-
-
 
                 return resourceIdForImage;
             }
