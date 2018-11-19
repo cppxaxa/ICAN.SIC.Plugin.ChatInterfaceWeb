@@ -79,7 +79,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
                 "<img style=\"box-shadow: 0px 0px 5px 5px rgba(100, 100, 100, 0.2); margin: 10px; margin-bottom: 14px; border-radius: 5px;\" src=\"",
                 "data:image/jpeg;base64,",
                 jpegEncodedImageString,
-                "\" style=\"width:500px; height: auto;\"></img>"
+                "\" style=\"max-width: 100%; height: auto;\"></img>"
             };
 
             foreach (var line in structLines)
