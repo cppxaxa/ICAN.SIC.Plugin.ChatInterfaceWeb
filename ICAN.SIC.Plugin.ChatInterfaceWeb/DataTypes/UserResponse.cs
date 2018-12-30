@@ -20,17 +20,21 @@ namespace ICAN.SIC.Plugin.ChatInterface
         public string Text { get { return this.text; } }
     }
 
-    public class BotResult : IBotResult
-    {
-        string text;
+    //public class BotResult : IBotResult
+    //{
+    //    IUserResponse userResponse;
+    //    string text;
 
-        public BotResult(string text)
-        {
-            this.text = text;
-        }
+    //    public BotResult(string text, IUserResponse userResponse)
+    //    {
+    //        this.text = text;
+    //        this.userResponse = userResponse;
+    //    }
 
-        public string Text { get { return this.text; } }
+    //    public string Text { get { return this.text; } }
 
-        public ChatResult ChatResult { get { return null; } }
-    }
+    //    public ChatResult ChatResult { get { return null; } }
+
+    //    public IUserResponse UserResponse { get { return userResponse; } }
+    //}
 }
