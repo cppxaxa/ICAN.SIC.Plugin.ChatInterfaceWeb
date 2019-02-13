@@ -31,7 +31,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
 
             string host = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfaceHost"];
             string port = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfacePort"];
-            
+
             Debug.Assert(port != null, "Please add a key to configuration as follows:" +
                                     "<configuration>" +
                                       "<runtime>" +
@@ -42,8 +42,18 @@ namespace ICAN.SIC.Plugin.ChatInterface
                                       "</runtime>" +
                                     "</configuration>");
 
-            string url = "http://" + host + ":" + port;
-            WebApp.Start<Startup>(url);
+            string url = "http://+:" + port;
+
+            try
+            {
+                WebApp.Start<Startup>(url);
+            }
+            catch (Exception)
+            {
+                url = "http://" + host + ":" + port;
+                WebApp.Start<Startup>(url);
+            }
+
             signalRHub = GlobalHost.ConnectionManager.GetHubContext<ChatInterfaceSignalRHub>();
             Debug.Assert(signalRHub != null, "No chatInterface signalR running hub found");
 
