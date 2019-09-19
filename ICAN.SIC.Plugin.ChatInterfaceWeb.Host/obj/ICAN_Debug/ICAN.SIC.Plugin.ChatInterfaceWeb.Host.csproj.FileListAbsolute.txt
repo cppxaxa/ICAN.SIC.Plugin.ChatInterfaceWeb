@@ -48,3 +48,6 @@ D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceW
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\ICAN_Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.csproj.CopyComplete
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\ICAN_Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\ICAN_Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.pdb
+D:\Projects\ICAN\ICAN.SIC\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe.config
+D:\Projects\ICAN\ICAN.SIC\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe
+D:\Projects\ICAN\ICAN.SIC\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.pdb

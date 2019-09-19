@@ -16,7 +16,6 @@ D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceW
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\ICAN_Debug\nunit.framework.dll
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\ICAN_Debug\Owin.dll
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\ICAN_Debug\Sprache.dll
-D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\ICAN_Debug\Syn.Bot.dll
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\ICAN_Debug\System.Net.Http.Formatting.dll
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\ICAN_Debug\System.Web.Cors.dll
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\ICAN_Debug\System.Web.Http.dll
@@ -54,3 +53,6 @@ D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceW
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\obj\ICAN_Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.csproj.CopyComplete
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\obj\ICAN_Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.dll
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb\obj\ICAN_Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.pdb
+D:\Projects\ICAN\ICAN.SIC\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.dll.config
+D:\Projects\ICAN\ICAN.SIC\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.dll
+D:\Projects\ICAN\ICAN.SIC\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.pdb

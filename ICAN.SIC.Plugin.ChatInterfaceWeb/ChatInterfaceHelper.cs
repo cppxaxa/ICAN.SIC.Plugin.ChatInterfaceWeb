@@ -116,38 +116,38 @@ namespace ICAN.SIC.Plugin.ChatInterface
                 htmlContent += line;
             }
 
-            signalRHub.Clients.All.addChatMessage(htmlContent);
+            signalRHub?.Clients.All.addChatMessage(htmlContent);
         }
 
         public void AddBotMessage(string message)
         {
-            signalRHub.Clients.All.addBotMessage(message);
+            signalRHub?.Clients.All.addBotMessage(message);
         }
 
         public void AddUserMessage(string message)
         {
-            signalRHub.Clients.All.addUserMessage(message);
+            signalRHub?.Clients.All.addUserMessage(message);
         }
 
         public void AddInfoLog(string message)
         {
-            signalRHub.Clients.All.addChatMessage(message);
+            signalRHub?.Clients.All.addChatMessage(message);
         }
 
         public void AddChatMessage(string message)
         {
             Console.WriteLine("Chat Message received at ChatInterface");
-            signalRHub.Clients.All.addChatMessage(message);
+            signalRHub?.Clients.All.addChatMessage(message);
         }
 
         public void AddMachineMessage(string message)
         {
-            signalRHub.Clients.All.addChatMessage("<p style=\"font-size: 12px;\">MACHINE MESSAGE</p> <p style=\"font-size: 12px;\">" + message + "<p>");
+            signalRHub?.Clients.All.addChatMessage("<p style=\"font-size: 12px;\">MACHINE MESSAGE</p> <p style=\"font-size: 12px;\">" + message + "<p>");
         }
 
         public void AddUserFriendlyMachineMessage(string message)
         {
-            signalRHub.Clients.All.addChatMessage("<p style=\"font-size: 12px;\">USER-MACHINE MESSAGE</p> <p style=\"font-size: 12px;\">" + message + "<p>");
+            signalRHub?.Clients.All.addChatMessage("<p style=\"font-size: 12px;\">USER-MACHINE MESSAGE</p> <p style=\"font-size: 12px;\">" + message + "<p>");
         }
 
         class Startup
