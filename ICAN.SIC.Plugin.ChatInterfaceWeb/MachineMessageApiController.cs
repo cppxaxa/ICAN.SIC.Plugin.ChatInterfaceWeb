@@ -1,4 +1,5 @@
 ﻿using ICAN.SIC.Abstractions;
+using ICAN.SIC.Abstractions.ConcreteClasses;
 using ICAN.SIC.Abstractions.IMessageVariants;
 using System;
 using System.Collections.Generic;

@@ -14,6 +14,7 @@ using ICAN.SIC.Plugin.ChatInterfaceWeb.DataTypes;
 using System.Threading;
 using System.Net;
 using MimeTypes;
+using ICAN.SIC.Abstractions.ConcreteClasses;
 
 namespace ICAN.SIC.Plugin.ChatInterfaceWeb
 {

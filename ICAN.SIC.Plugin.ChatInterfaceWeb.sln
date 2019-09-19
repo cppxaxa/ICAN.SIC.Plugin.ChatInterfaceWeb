@@ -10,15 +10,20 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		ICAN_Debug|Any CPU = ICAN_Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2F08D68C-17E4-4A29-905D-C7EDA01204FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F08D68C-17E4-4A29-905D-C7EDA01204FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F08D68C-17E4-4A29-905D-C7EDA01204FA}.ICAN_Debug|Any CPU.ActiveCfg = ICAN_Debug|Any CPU
+		{2F08D68C-17E4-4A29-905D-C7EDA01204FA}.ICAN_Debug|Any CPU.Build.0 = ICAN_Debug|Any CPU
 		{2F08D68C-17E4-4A29-905D-C7EDA01204FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F08D68C-17E4-4A29-905D-C7EDA01204FA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FDC392F6-3DAE-4D66-8979-ABF08D49304D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FDC392F6-3DAE-4D66-8979-ABF08D49304D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC392F6-3DAE-4D66-8979-ABF08D49304D}.ICAN_Debug|Any CPU.ActiveCfg = ICAN_Debug|Any CPU
+		{FDC392F6-3DAE-4D66-8979-ABF08D49304D}.ICAN_Debug|Any CPU.Build.0 = ICAN_Debug|Any CPU
 		{FDC392F6-3DAE-4D66-8979-ABF08D49304D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDC392F6-3DAE-4D66-8979-ABF08D49304D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

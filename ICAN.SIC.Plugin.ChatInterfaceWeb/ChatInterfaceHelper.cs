@@ -24,6 +24,14 @@ namespace ICAN.SIC.Plugin.ChatInterface
         IChatInterface chatInterface;
         ChatInterfaceUtility utility = new ChatInterfaceUtility();
 
+        IDisposable webapp = null;
+
+        public void Dispose()
+        {
+            webapp?.Dispose();
+            webapp = null;
+        }
+
         public ChatInterfaceHelper(IChatInterface chatInterface)
         {
             this.chatInterface = chatInterface;
@@ -46,12 +54,23 @@ namespace ICAN.SIC.Plugin.ChatInterface
 
             try
             {
-                WebApp.Start<Startup>(url);
+                webapp = WebApp.Start<Startup>(url);
             }
             catch (Exception)
             {
-                url = "http://" + host + ":" + port;
-                WebApp.Start<Startup>(url);
+                try
+                {
+                    url = "http://" + host + ":" + port;
+                    webapp = WebApp.Start<Startup>(url);
+                }
+                catch(Exception ex)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"ChatInterface failed to start on {host} at {port}\nException: " + ex.ToString());
+                    Console.ResetColor();
+
+                    return;
+                }
             }
 
             signalRHub = GlobalHost.ConnectionManager.GetHubContext<ChatInterfaceSignalRHub>();

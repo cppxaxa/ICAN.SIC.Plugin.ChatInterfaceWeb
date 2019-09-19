@@ -1,5 +1,7 @@
 ﻿using ICAN.SIC.Abstractions;
+using ICAN.SIC.Abstractions.ConcreteClasses;
 using ICAN.SIC.Abstractions.IMessageVariants;
+using ICAN.SIC.Abstractions.IMessageVariants.ICANSEE;
 using ICAN.SIC.Plugin.ChatInterfaceWeb;
 using System;
 using System.Collections.Generic;
@@ -27,7 +29,8 @@ namespace ICAN.SIC.Plugin.ChatInterface
             hub.Subscribe<IMachineMessage>(this.AddMachineMessage);
             hub.Subscribe<IUserFriendlyMachineMessage>(this.AddUserFriendlyMachineMessage);
             hub.Subscribe<IMachineImageMessage>(this.AddMachineImageMessage);
-            
+            hub.Subscribe<Abstractions.IMessageVariants.ICANSEE.IInformationMessage>(this.AddIcanseeInformationMessage);
+
             helper = new ChatInterfaceHelper(this);
 
             ChatApiController.hub = hub;
@@ -37,6 +40,11 @@ namespace ICAN.SIC.Plugin.ChatInterface
             string host = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfaceHost"];
             string port = System.Configuration.ConfigurationSettings.AppSettings["ChatInterfacePort"];
             utility.GenerateIndexHtmlFromTemplate(host, port);
+        }
+
+        private void AddIcanseeInformationMessage(IInformationMessage message)
+        {
+            helper.AddMachineMessage("Information Message<br/><br/>" + message.Text.Replace("\\n", "<br/>"));
         }
 
         private void AddMachineImageMessage(IMachineImageMessage message)
@@ -68,7 +76,7 @@ namespace ICAN.SIC.Plugin.ChatInterface
         private void AddInfoLog(ILog response)
         {
             string prefix = String.Empty;
-            switch(response.LogType)
+            switch (response.LogType)
             {
                 case LogType.Debug:
                     prefix = "[DEBUG] ";
@@ -116,6 +124,30 @@ namespace ICAN.SIC.Plugin.ChatInterface
         public void TestChatMessage(string v)
         {
             helper.AddChatMessage(v);
+        }
+
+        public override void Dispose()
+        {
+            ChatInterfaceUtility utility = null;
+
+            hub.Unsubscribe<IBotResult>(this.AddBotResult);
+            hub.Unsubscribe<IUserResponse>(this.AddUserResponse);
+            hub.Unsubscribe<ILog>(this.AddInfoLog);
+            hub.Unsubscribe<IChatMessage>(this.ParseChatMessage);
+            hub.Unsubscribe<IMachineMessage>(this.AddMachineMessage);
+            hub.Unsubscribe<IUserFriendlyMachineMessage>(this.AddUserFriendlyMachineMessage);
+            hub.Unsubscribe<IMachineImageMessage>(this.AddMachineImageMessage);
+            hub.Unsubscribe<Abstractions.IMessageVariants.ICANSEE.IInformationMessage>(this.AddIcanseeInformationMessage);
+
+            helper.Dispose();
+            helper = null;
+
+            ChatApiController.hub = null;
+            MachineMessageApiController.hub = null;
+            MachineImageMessageApiController.hub = null;
+
+            string host = null;
+            string port = null;
         }
     }
 }

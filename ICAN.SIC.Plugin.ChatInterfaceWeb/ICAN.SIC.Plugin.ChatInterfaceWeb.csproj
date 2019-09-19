@@ -30,6 +30,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ICAN_Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ICAN_Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="HttpMultipartParser, Version=2.2.4.0, Culture=neutral, PublicKeyToken=6d293681fa6c7a03, processorArchitecture=MSIL">
       <HintPath>..\packages\HttpMultipartParser.2.2.4\lib\net45\HttpMultipartParser.dll</HintPath>
@@ -108,7 +118,6 @@
     <Compile Include="DataTypes\IUIMessage.cs" />
     <Compile Include="DataTypes\MachineImageMessage.cs" />
     <Compile Include="IChatInterface.cs" />
-    <Compile Include="DataTypes\MachineMessage.cs" />
     <Compile Include="MachineImageMessageApiController.cs" />
     <Compile Include="MachineMessageApiController.cs" />
     <Compile Include="MimeTypeMap.cs" />

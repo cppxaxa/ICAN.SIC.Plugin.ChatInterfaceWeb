@@ -1,7 +1,6 @@
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe.config
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\bin\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.pdb
-D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.csprojResolveAssemblyReference.cache
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.csproj.CoreCompileInputs.cache
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.pdb
@@ -26,3 +25,5 @@ D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb - Copy\ICAN.SIC.Plugin.ChatInt
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb - Copy\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.csproj.CoreCompileInputs.cache
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb - Copy\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.exe
 D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb - Copy\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.pdb
+D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.csprojAssemblyReference.cache
+D:\Projects\ICAN\ICAN.SIC.Plugin.ChatInterfaceWeb\ICAN.SIC.Plugin.ChatInterfaceWeb.Host\obj\Debug\ICAN.SIC.Plugin.ChatInterfaceWeb.Host.csproj.CopyComplete
